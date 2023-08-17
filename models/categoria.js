@@ -1,9 +1,13 @@
-// Modelo da Tabela
+/**
+ * n:m 
+ * Um produto pode ter várias categorias e cada categoria pode pertencer a vários produtos
+ */
+
 
 const Sequelize = require('sequelize');
-const database = require('./db');
+const database = require('../db');
 
-const Produto = database.define('produto', {
+const Categoria = database.define('categoria', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -13,9 +17,8 @@ const Produto = database.define('produto', {
     nome: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    preco: Sequelize.DECIMAL,
-    descricao: Sequelize.STRING
+    }
 })
 
-module.exports = Produto;
+
+module.exports = Categoria;
